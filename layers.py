@@ -9,7 +9,7 @@ class Layer():
     
     def forward(self, input_dat: Tensor) -> Tensor:
         raise NotImplementedError
-
+    
     def backward(self, input_data: Tensor) -> Tensor:
         raise NotImplementedError
 

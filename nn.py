@@ -3,11 +3,13 @@ from .layers import Layer
 # import numpy as np
 from typing import  Sequence, Iterator, Tuple
 
+ParamGradIter = Iterator[Tuple[Tensor, Tensor]]
+
 class NeuralNet(Layer):
     def __init__(self, layers: Sequence[Layer]) -> None:
         self.layers = layers
 
-    def params_grads(self) -> Iterator[Tuple[Tensor, Tensor]]:
+    def params_grads(self) -> ParamGradIter:
         for layer in self.layers:
             for name, param in layer.params.items():
                 grad = layer.grads[name]
