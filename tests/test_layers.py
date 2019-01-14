@@ -4,6 +4,10 @@ from nnlib.tensor import Tensor
 
 import pytest
 
+'''
+test typing with
+mypy nnlib/  --ignore-missing-imports
+'''
 
 @pytest.mark.parametrize("xx", [
     ([0]),

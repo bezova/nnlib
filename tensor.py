@@ -4,4 +4,3 @@ from numpy import ndarray as Tensor
 # class Tensor():
 #     def __init__(self. x):
 #         self.x = np.array(x)
-
