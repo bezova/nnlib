@@ -30,15 +30,15 @@ class Linear(Layer):
         return grad @ self.params['w'].T
 
 
-Active = Callable[[Tensor], Tensor]    
+Active_fun = Callable[[Tensor], Tensor]    
 
 
 class Activation(Layer):
-    def __init__(self, f: Active, f_prime: Active) -> None:
-        self.f = f
-        self.f_prime = f_prime
+    def __init__(self, f: Active_fun, f_prime: Active_fun) -> None:
+        self.f = f #activation function
+        self.f_prime = f_prime #its derivative
 
-    def forawar(self, input_data: Tensor) -> Tensor:
+    def forward(self, input_data: Tensor) -> Tensor:
         self.inp_dat = input_data
         return self.f(input_data)
     

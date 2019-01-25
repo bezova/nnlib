@@ -1,14 +1,15 @@
 from .tensor import Tensor
 from .nn import NeuralNet
 from .data import DataIterator, BatchIterator
+from .optimizers import Optimizer, SGD
 from loss import Loss, MSE
 
 
 def train_nn(
     net: NeuralNet, 
-    epochs: int = 1, 
     inputs: Tensor, 
     targets: Tensor,
+    epochs: int = 1,
     loss: Loss = MSE(),
     batch_iter: DataIterator = BatchIterator(),
     optimizer: Optimizer = SGD(),
@@ -30,6 +31,6 @@ def train_nn(
 
             optimizer.step(net)
         
-        print(f'epoch:{epoch}, loss:{eoch_loss}')
+        print(f'epoch:{epoch}, loss:{epoch_loss}')
 
 
